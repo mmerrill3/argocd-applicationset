@@ -1,0 +1,7 @@
+{
+  "cluster": {
+    "owner": "jjpaacks@gmail.com",
+    "name": "docker-desktop",
+    "address": "https://kubernetes.docker.internal:6443"
+  }
+}

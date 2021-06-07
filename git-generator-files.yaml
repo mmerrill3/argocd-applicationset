@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/mmerrill3/argocd-applicationset.git
+      revision: HEAD
+      files:
+      - path: "cluster-config/**/config.json"
+  template:
+    metadata:
+      name: '{{cluster.name}}-apps'
+    spec:
+      project: default
+      source:
+        helm:
+          valuesFiles:
+            - override.yaml
+        repoURL: https://github.com/mmerrill3/argocd-applicationset.git
+        targetRevision: HEAD
+        path: "apps"
+      destination:
+        server: '{{cluster.address}}'
+        namespace: grafana
