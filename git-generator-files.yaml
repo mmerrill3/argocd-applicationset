@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: grafana
 spec:
   generators:
   - git:
@@ -16,11 +16,11 @@ spec:
       project: default
       source:
         helm:
-          valuesFiles:
+          valueFiles:
             - override.yaml
         repoURL: https://github.com/mmerrill3/argocd-applicationset.git
         targetRevision: HEAD
-        path: "apps"
+        path: "apps/grafana"
       destination:
         server: '{{cluster.address}}'
         namespace: grafana
