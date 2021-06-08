@@ -4,5 +4,5 @@
     "name": "docker-desktop",
     "address": "https://kubernetes.docker.internal:6443"
   },
-  "override" : "overrides.yaml"
+  "override" : "overrides/overrides.yaml"
 }
