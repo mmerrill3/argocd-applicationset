@@ -20,7 +20,7 @@ spec:
             - '{{override}}'
         repoURL: https://github.com/mmerrill3/argocd-applicationset.git
         targetRevision: HEAD
-        path: "apps/grafana"
+        path: 'apps/grafana/{{version}}'
       destination:
         server: '{{cluster.address}}'
         namespace: grafana

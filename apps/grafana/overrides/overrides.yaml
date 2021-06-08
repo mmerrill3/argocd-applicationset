@@ -1,2 +1,6 @@
 ingress:
   enabled: false
+
+grafana:
+  app:
+    version: "7.4.2"
