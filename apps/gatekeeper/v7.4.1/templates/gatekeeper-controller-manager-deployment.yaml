@@ -9,6 +9,8 @@ metadata:
     gatekeeper.sh/system: "yes"
     heritage: tiller
     release: '{{ .Release.Name }}'
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true
   name: gatekeeper-controller-manager
   namespace: '{{ .Release.Namespace }}'
 spec:
@@ -22,6 +24,7 @@ spec:
       gatekeeper.sh/system: "yes"
       heritage: tiller
       release: '{{ .Release.Name }}'
+      mike: "1"
   template:
     metadata:
       annotations:
@@ -35,6 +38,7 @@ spec:
         gatekeeper.sh/system: "yes"
         heritage: tiller
         release: '{{ .Release.Name }}'
+        mike: "1"
     spec:
       affinity:
         {{- toYaml .Values.controllerManager.affinity | nindent 8 }}
