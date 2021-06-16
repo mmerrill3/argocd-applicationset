@@ -5,7 +5,7 @@ metadata:
     app: '{{ template "gatekeeper.name" . }}'
     chart: '{{ template "gatekeeper.name" . }}'
     gatekeeper.sh/system: "yes"
-    heritage: '{{ .Release.Service }}'
+    heritage: Tiller
     release: '{{ .Release.Name }}'
   name: gatekeeper-webhook-service
   namespace: '{{ .Release.Namespace }}'
@@ -25,5 +25,5 @@ spec:
     control-plane: controller-manager
     gatekeeper.sh/operation: webhook
     gatekeeper.sh/system: "yes"
-    heritage: '{{ .Release.Service }}'
+    heritage: Tiller
     release: '{{ .Release.Name }}'
