@@ -17,6 +17,7 @@ spec:
     metadata:
       labels:
         app: busybox
+        heritage: {{ .Release.Service }}
     spec:
       containers:
       - name: busybox
