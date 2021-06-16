@@ -7,7 +7,7 @@ metadata:
     control-plane: controller-manager
     gatekeeper.sh/operation: webhook
     gatekeeper.sh/system: "yes"
-    heritage: '{{ .Release.Service }}'
+    heritage: tiller
     release: '{{ .Release.Name }}'
   name: gatekeeper-controller-manager
   namespace: '{{ .Release.Namespace }}'
@@ -20,7 +20,7 @@ spec:
       control-plane: controller-manager
       gatekeeper.sh/operation: webhook
       gatekeeper.sh/system: "yes"
-      heritage: '{{ .Release.Service }}'
+      heritage: tiller
       release: '{{ .Release.Name }}'
   template:
     metadata:
@@ -33,7 +33,7 @@ spec:
         control-plane: controller-manager
         gatekeeper.sh/operation: webhook
         gatekeeper.sh/system: "yes"
-        heritage: '{{ .Release.Service }}'
+        heritage: tiller
         release: '{{ .Release.Name }}'
     spec:
       affinity:
