@@ -4,7 +4,7 @@ metadata:
   name: busybox-deployment
   labels:
     app: busybox
-    heritage: {{ .Release.Service }}
+    heritage: {{ .Release.Service }}-new
 spec:
   replicas: 1
   strategy: 
@@ -12,12 +12,12 @@ spec:
   selector:
     matchLabels:
       app: busybox
-      heritage: {{ .Release.Service }}
+      heritage: {{ .Release.Service }}-new
   template:
     metadata:
       labels:
         app: busybox
-        heritage: {{ .Release.Service }}
+        heritage: {{ .Release.Service }}-new
     spec:
       containers:
       - name: busybox
