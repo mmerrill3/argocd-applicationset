@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: grafana
+  name: gatekeeper
 spec:
   generators:
   - git:
@@ -23,4 +23,4 @@ spec:
         path: 'apps/gatekeeper/{{version}}'
       destination:
         server: '{{cluster.address}}'
-        namespace: grafana
+        namespace: gatekeeper
